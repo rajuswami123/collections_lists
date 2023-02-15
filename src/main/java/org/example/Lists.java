@@ -86,7 +86,7 @@ public class Lists {
         ou.log(Level.INFO,()->"the size is"+numbers.size());
         ou.log(Level.INFO,()->""+numbers);
         ou.info("this are some implementations of arraylist......................");
-        String list[]=new String[10];
+        String[] list =new String[10];
         list[0]="hello";
         list[1]="sir";
         ou.info("Length is "+List.length+"\n"+List[0]+" "+List[1]);
