@@ -89,7 +89,7 @@ public class Lists {
         String[] list =new String[10];
         list[0]="hello";
         list[1]="sir";
-        ou.info("Length is "+list.length+"\n"+list[0]+" "+list[1]);
+        ou.log(Level.INFO,()->"Length is "+list.length+"\n"+list[0]+" "+list[1]);
 
     }
 }
