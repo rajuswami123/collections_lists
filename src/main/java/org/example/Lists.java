@@ -1,46 +1,47 @@
 package org.example;
 
 import java.util.ArrayList;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
-class node{
+class Node{
     int data;
-    node next;
+    Node next;
 }
-class ll{
+class Ll {
     Logger ou = Logger.getLogger("com.api.jar");
-    node head;
+    Node head;
     void insert(int value){
-        node inode=new node();
-        inode.data=value;
+        Node iNode=new Node();
+        iNode.data=value;
         if(this.head==null){
-            head=inode;
+            head=iNode;
         }
         else{
-            node cnode=head;
-            while(cnode.next !=null){
-                cnode=cnode.next;
+            Node cNode=head;
+            while(cNode.next !=null){
+                cNode=cNode.next;
             }
-            cnode.next=inode;
+            cNode.next=iNode;
 
         }
     }
     void insert(int value,int ind) {
-        node inode = new node();
-        inode.data = value;
-        node n = head;
+        Node iNode = new Node();
+        iNode.data = value;
+        Node n = head;
         for(int i=0;i<ind-1;i++){
             n=n.next;
         }
-        inode.next=n.next;
-        n.next=inode;
+        iNode.next=n.next;
+        n.next=iNode;
 
 
 
     }
     void remove(int ind){
-        node n =head;
-        node n1=null;
+        Node n =head;
+        Node n1=null;
         if(ind==0){
             head=head.next;
         }
@@ -56,7 +57,7 @@ class ll{
 
 
         while(head !=null){
-            ou.info(""+head.data);
+            ou.log(Level.INFO,()->""+head.data);
             head=head.next;
 
 
@@ -68,7 +69,7 @@ class ll{
 public class Lists {
     public static void main(String[] args) {
         Logger ou = Logger.getLogger("com.api.jar");
-        ll ob=new ll();
+        Ll ob=new Ll();
         ob.	insert(1);
         ob.	insert(2);
         ob.insert(3);
@@ -82,14 +83,12 @@ public class Lists {
         numbers.add(255);
         numbers.add(3,143);
         numbers.remove(0);
-        ou.info("the size is"+numbers.size());
-        ou.info(""+numbers);
+        ou.log(Level.INFO,()->"the size is"+numbers.size());
+        ou.log(Level.INFO,()->""+numbers);
         ou.info("this are some implementations of arraylist......................");
         String List[]=new String[10];
         List[0]="hello";
         List[1]="sir";
-
-        List[0]="hi";
         ou.info("Length is "+List.length+"\n"+List[0]+" "+List[1]);
 
     }
